@@ -12,6 +12,7 @@ Tell IE users to change browser? Or your site is only for chrome? Now you choose
 This plugin give you the option to give a visitor of your site a warning popup if they use a browser that you don't support on your site. For example, Internet Explorer 6.
 
 It supports the 5 largest and most populare browser on the market.
+
 * Firefox
 * Chrome
 * Safari
