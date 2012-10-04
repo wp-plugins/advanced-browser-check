@@ -88,7 +88,7 @@ Thank you!';
 
 				<h2><?php echo __('Browsers and versions to check for'); ?></h2>
 				<div class="form-row">
-					<?php $browsers = json_decode(file_get_contents(plugins_url('browser-versions.json',__FILE__))); ?>
+					<?php $browsers = json_decode(file_get_contents(WP_PLUGIN_DIR.'/advanced-browser-check/browser-versions.json')); ?>
 					<?php foreach($browsers as $key => $browser) : ?>
 						<select name="abc_check_<?php echo $key; ?>">
 							<?php
