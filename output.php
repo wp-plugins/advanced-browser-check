@@ -15,13 +15,14 @@ class abc_output {
 
 		foreach($check_browsers as $browser => $version) {
 			if($user_browser['short_name'] === $browser && $user_browser['version'] <= $version.'______________________________') {
-				return $this->build_html($title, $msg, $show_browsers, $hide);
+				$ie6 = ($user_browser['short_name'] === 'ie' && $user_browser['version'] <= '6______________________________') ? 'ie6' : '';
+				return $this->build_html($title, $msg, $show_browsers, $hide, $ie6);
 			}
 		}
 	}
 
-	private function build_html($title = NULL, $msg = NULL, $show_browsers = array(), $hide = NULL) {
-		$html = '<div class="adv_browser_check">';
+	private function build_html($title = NULL, $msg = NULL, $show_browsers = array(), $hide = NULL, $ie6 = '') {
+		$html = '<div class="adv_browser_check '.$ie6.'">';
 			$html .= '<div class="adv_browser_check_msg">';
 				$html .= '<h1>'. $title .'</h2>';
 				$html .= nl2br($msg);

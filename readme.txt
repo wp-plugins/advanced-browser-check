@@ -3,7 +3,7 @@ Contributors: darkwhispering
 Tags: firefox, chrome, opera, safari, internet explorer, ie6, ie7, ie8, ie, ff, plugin, browser, block browser, block ie6, browser check, check, popup, warning
 Requires at least: 3.3.0
 Tested up to: 3.4.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Tell IE users to change browser? Or your site is only for chrome? Now you choose what browsers should trigger a warning popup or not on your site.
 
@@ -38,6 +38,9 @@ This plugin need javascript activated in the visitors browser to work. Why? To g
 2. Backend screenshot
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed problem with popup not beeing displayed properly in IE6
 
 = 1.0.1 =
 * Fixed problem with browser select boxes not shownig up.
