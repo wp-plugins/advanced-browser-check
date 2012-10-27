@@ -23,7 +23,7 @@ You can customize the warning message, choose what browsers download pages you w
 
 If you allow users to hide the popup, a cookie is set that expires after 24h. After 24h, the user will see the popup again with the option to hide it for another 24h.
 
-This plugin is tested and works with the WP Super Cache plugin! It is also tested and working on Wordpress networks/multisite.
+This plugin is tested and works with the WP Super Cache plugin!
 
 *There is versions added of browsers that it not yet released as stable versions. This is just to minimize the need of an plugin update in the future when new browsers are released and to let users that use the beta and alpha version to test this plugin with there browsers. I will do my best to keep this plugin updated with the latest versions of avaliable browsers.*
 
