@@ -9,8 +9,6 @@ Tell IE users to change browser? Or is your site for chrome only? Now you choose
 
 == Description ==
 
-**There is some strange issue with the WP svn directory. The zip file you DL says v1.0.1, but it is and contains all files for v2.0.2**
-
 This plugin give you the option to give a visitor of your site a warning popup if they use a browser that you don't support. For example, Internet Explorer 6.
 
 It supports the 5 largest and most populare browser on the market.
