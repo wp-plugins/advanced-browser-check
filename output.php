@@ -1,17 +1,20 @@
 <?php
 // ========================
-// = Output			 =
+// = Output			 	  =
 // ========================
 class abc_output {
 
+	/**
+	* Check if we should display the popup
+	**/
 	function html() {
-		$user_browser = $this->getBrowser();
-		$abc_options = get_option('advanced-browser-check');
+		$user_browser 	= $this->getBrowser();
+		$abc_options 	= abc_setting_values();
 		$check_browsers = $abc_options['check_browser'];
-		$show_browsers = $abc_options['show_browser'];
-		$title = $abc_options['title'];
-		$msg = $abc_options['msg'];
-		$hide = $abc_options['hide'];
+		$show_browsers 	= $abc_options['show_browser'];
+		$title 			= $abc_options['title'];
+		$msg 			= $abc_options['msg'];
+		$hide 			= $abc_options['hide'];
 
 		foreach($check_browsers as $browser => $version) {
 			if($user_browser['short_name'] === $browser && $user_browser['version'] <= $version.'______________________________') {
@@ -21,6 +24,9 @@ class abc_output {
 		}
 	}
 
+	/**
+	* Build up the HTML for the popup
+	**/
 	private function build_html($title = NULL, $msg = NULL, $show_browsers = array(), $hide = NULL, $ie6 = '') {
 		$html = '<div class="adv_browser_check '.$ie6.'">';
 			$html .= '<div class="adv_browser_check_msg">';
@@ -42,6 +48,9 @@ class abc_output {
 		return $html;
 	}
 
+	/**
+	* Get the visitors browser, browser version and platform
+	**/
 	private function getBrowser()
 	{
 		$u_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -117,6 +126,9 @@ class abc_output {
 
 }
 
+/**
+* Output the popup
+**/
 function abc_output() {
 	$output = new abc_output;
 	echo $output->html();
