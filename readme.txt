@@ -29,8 +29,8 @@ This plugin is tested and works with the WP Super Cache plugin. It is also teste
 
 == Installation ==
 
-1. Upload the zipped file to yoursite/wp-content/plugins
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload the zipped file to yoursite/wp-content/plugins.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 
