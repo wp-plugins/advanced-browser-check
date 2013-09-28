@@ -17,7 +17,13 @@ class abc_output {
 		$hide 			= $abc_options['hide'];
 
 		foreach($check_browsers as $browser => $version) {
-			if($user_browser['short_name'] == $browser && $user_browser['version'] <= $version.'______________________________' && $user_browser['platform'] != 'android' && $user_browser['platform'] != 'iOS') {
+			if(
+				$user_browser['short_name'] == $browser
+				&& $user_browser['version'] <= $version.'______________________________'
+				&& $user_browser['platform'] != 'android'
+				&& $user_browser['platform'] != 'iOS'
+				&& $user_browser['platform'] != 'BB10')
+			{
 				$ie6 = ($user_browser['short_name'] == 'ie' && $user_browser['version'] <= '6______________________________') ? 'ie6' : '';
 				return $this->build_html($title, $msg, $show_browsers, $hide, $ie6);
 			}
@@ -36,17 +42,60 @@ class abc_output {
 			$html .= '<ul class="adv_browser_check_icons">';
 				foreach($show_browsers as $browser => $link) {
 					if($link) {
-						$html .= '<li><a href="'. $link .'" class="'. $browser .'" target="_blank"><img src="'. plugins_url('/img/'. $browser .'-128x128.png', __FILE__) .'" alt="'. $browser .'"></a></li>';
+						$html .= '<li>';
+							$html .= '<a href="'. $link .'" class="'. $browser .'" target="_blank">';
+								$html .= '<img src="'. plugins_url('/img/'. $browser .'-128x128.png', __FILE__) .'" alt="'. $browser .'">';
+								$html .= $this->getBrowserName($browser);
+							$html .= '</a>';
+						$html .= '</li>';
 					}
 				}
 			$html .= '</ul>';
 			if($hide) {
-				$html .= '<a href="#" class="abc-hide">Hide</a>';
+				$html .= '<a href="#" class="abc-hide">X</a>';
 			}
 
 		$html .= '</div>';
 
 		return $html;
+	}
+
+	/**
+	* Return full browser name based on the short name
+	**/
+	private function getBrowserName($short)
+	{
+
+		switch($short) {
+
+			case 'ff':
+				$browser = 'Firefox';
+				break;
+
+			case 'chrome':
+				$browser = 'Chrome';
+				break;
+
+			case 'safari':
+				$browser = 'Safari';
+				break;
+
+			case 'opera':
+				$browser = 'Opera';
+				break;
+
+			case 'ie':
+				$browser = 'Internet Explorer';
+				break;
+
+			default:
+				$browser = '';
+				break;
+
+		}
+
+		return $browser;
+
 	}
 
 	/**

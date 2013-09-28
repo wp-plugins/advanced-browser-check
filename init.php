@@ -71,18 +71,18 @@ function abc_update() {
 **/
 function abc_default_browsers() {
 	return array(
-		'safari'	=> array(0,3,4,5,6,7,8,9),
-		'opera'		=> array(0,7,8,9,10,11,12,13,14,15,16),
-		'ff' 		=> array(0,10,11,12,13,14,15,16,17,18,19,20,21,22),
-		'chrome'	=> array(0,17,18,19,20,21,22,23,24,25,26,27,28),
-		'ie'		=> array(0,5,6,7,8,9,10,11)
+		'safari'	=> array(0,3,4,5,6,7,8,9,10),
+		'opera'		=> array(0,7,8,9,10,11,12,13,14,15,16,17,18,19,20),
+		'ff' 		=> array(0,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30),
+		'chrome'	=> array(0,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35),
+		'ie'		=> array(0,5,6,7,8,9,10,11,12,13,14)
 	);
 }
 
 /**
 * Styles and scripts needed for the plugin to work
 **/
-function abc_styles_and_scripts() {
+function abc_scripts() {
 	// Load jQuery
 	wp_enqueue_script("jquery");
 
@@ -91,11 +91,15 @@ function abc_styles_and_scripts() {
 
 	// The ajax request so the plugin works with caching plugins
 	wp_enqueue_script("abc_script", plugins_url('/js/script.js', __FILE__));
+}
 
+function abc_styles() {
 	// Stylesheet for the popup
 	wp_enqueue_style("abc_style", plugins_url('/css/style.css', __FILE__));
 }
-add_action('wp_enqueue_scripts', 'abc_styles_and_scripts');
+
+add_action('wp_enqueue_scripts', 'abc_scripts');
+add_action('wp_enqueue_scripts', 'abc_styles');
 
 /**
 * The wrapper, added to the site footer, that the popup will be placed in after the ajax load
