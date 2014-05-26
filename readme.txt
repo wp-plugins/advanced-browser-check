@@ -1,15 +1,16 @@
 === Advanced Browser Check ===
 Contributors: darkwhispering
-Tags: firefox, chrome, opera, safari, internet explorer, ie6, ie7, ie8, ie, ff, plugin, browser, block browser, block ie6, browser check, check, popup, warning, old, old browser, stop, stop ie, block internet explorer
-Requires at least: 3.3.0
-Tested up to: 3.6.1
-Stable tag: 2.2.0
+Donate link: http://darkwhispering.com/by-me-a-beer
+Tags: firefox, chrome, opera, safari, internet explorer, ie6, ie7, ie8, ie, ff, plugin, browser, block browser, block ie6, browser check, check, popup, warning, old, old browser, stop, stop ie, block internet explorer, browscap
+Requires at least: 3.0.0
+Tested up to: 3.9.1
+Stable tag: 3.0.0
 
-Tell IE users to change browser? Or is your site for chrome only? Now you choose what browsers should trigger a warning popup or not on your site.
+Tell IE users to change browser? Or is your site for Chrome only? Now you choose what browsers should trigger a warning popup or not on your site.
 
 == Description ==
 
-This plugin give you the option to give a visitor of your site a warning popup if they use a browser that you don't support. For example, Internet Explorer 6.
+This plugin give you the option to give a visitor of your site a warning popup if they use a browser that you don't support. For example, Internet Explorer 9 or lover.
 
 It supports the 5 largest and most popular browser on the market.
 
@@ -19,18 +20,18 @@ It supports the 5 largest and most popular browser on the market.
 * Opera
 * Internet Explorer
 
-You can customize the warning message, choose what browsers download pages you want to display a link to, select what browsers and browser versions that should trigger the popup and if the use can or can't hide the popup.
+You can customize the warning message, choose what browsers download pages you want to display a link to, select what browsers and browser versions that should trigger the popup and if the user can or can't hide the popup.
 
 If you allow users to hide the popup, a cookie is set that expires after 24h. After 24h, the user will see the popup again with the option to hide it for another 24h.
 
-This plugin is tested and works with the WP Super Cache plugin. It is also tested and working on Wordpress Networks.
+This plugin is tested and works with the WP Super Cache and W3 Total Cache plugins. It is also tested and working on Wordpress Networks.
 
-*There is versions added of browsers that it not yet released as stable versions. This is just to minimize the need of an plugin update in the future when new browsers are released and to let users that use the beta and alpha version to test this plugin with there browsers. I will do my best to keep this plugin updated with the latest versions of available browsers.*
+*There is versions added of browsers that it not yet released as stable versions. This is to minimize the need of an plugin update in the future when new browsers are released and to let users try the plugin with beta and alpha version of the browsers browsers. I will do my best to keep this plugin updated with the latest versions of available browsers.*
 
 == Installation ==
 
-1. Upload the zipped file to yoursite/wp-content/plugins.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Upload the zipped file to yoursite/wp-content/plugins
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
@@ -42,7 +43,7 @@ You also need to have wp_head() function added in your theme header for the scri
 = I only get a black overlay, no popup =
 This can get this from many reasons. It can be any of the plugins you have installed that is not compatible with my plugin. It can also be your theme.
 
-The plugin is tested on the standard theams delivered with wordpress. I can't guarantee that the plugin will work on 3rd pary themes.
+The plugin is tested on the standard theams delivered with Wordpress. I can't guarantee that the plugin will work on 3rd party themes.
 
 Before posting a support thread, please try to inactivate all your plugins except Advanced Browser Check and try again. If you still have the issue, try with another theme.
 
@@ -59,7 +60,22 @@ If you create a new support post, please provide as much info as possible. Like 
 1. Frontend screenshot
 2. Backend screenshot
 
+== Upgrade Notice ==
+
+= 3.0.0 =
+This new version include a lot of improvments and rewrites to make the plugin better and more stable. It now also REQUIRES a cache folder that you might need to create manually!
+
 == Changelog ==
+
+= 3.0.0 =
+* Rewritten and now using [PHP Browscap library](https://github.com/GaretJax/phpbrowscap) for browser detection.
+* Updated browser versions. Includes current versions plus 5 future and 10 past versions.
+* Plugin now REQUIRES a cache folder located in /wp-content/cache with full read and write permissions.
+* Added a debug option for easier debuging.
+* New cleaner design of the overlay.
+* Better responsivness of the overlay, should not be a problem to close it on mobile devices.
+* Smaller browser icons.
+* General bug fixes and tweaks
 
 = 2.2.0 =
 * Added fix for problems with enqueue loading of scripts and css styles. Thanks @sireneweb for the fix.
