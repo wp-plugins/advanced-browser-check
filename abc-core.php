@@ -1,7 +1,7 @@
 <?php
 
 // Include the Browscap library
-require(WP_PLUGIN_DIR.'/advanced-browser-check/browscap/browscap.php');
+require(plugin_dir_path( __FILE__ ).'browscap/browscap.php');
 use phpbrowscap\Browscap;
 
 class ABC_Core {
@@ -58,7 +58,9 @@ class ABC_Core {
     **/
     function content_wrapper()
     {
-        echo "<div class='advanced-browser-check' style='display:none;' data-url='".json_encode(array("abc_url" => plugins_url("advanced-browser-check.php",__FILE__)))."'></div>";
+        echo "<div class='advanced-browser-check' style='display:none;' data-url='".json_encode(array("abc_url" => admin_url('admin-ajax.php')))."'></div>";
+
+        // echo "<div class='advanced-browser-check' style='display:none;' data-url='".json_encode(array("abc_url" => plugins_url("advanced-browser-check.php",__FILE__)))."'></div>";
     }
 
     /**
